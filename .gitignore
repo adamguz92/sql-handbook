@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Lokalne ustawienia VS Code
+.vscode/
+
+# Tymczasowe pliki
+*.tmp
+*.log
