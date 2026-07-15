@@ -47,8 +47,10 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 # Spis treści 
 
 ## 1. SELECT
-## 2.
-## 3.
+## 2. AS
+## 3. DISTINCT
+## 4. CREATE VIEW
+## 5. LIMIT
 
 ---
 
