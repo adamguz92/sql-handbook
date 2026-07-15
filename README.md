@@ -28,7 +28,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 
 ## Kursy
 
-- [ ] DataCamp - Introduction to SQL
+- [x] DataCamp - Introduction to SQL
 - [ ] DataCamp - Intermediate SQL
 - [ ] DataCamp - Joining Data in SQL
 - [ ] DataCamp - Data Manipulation in SQL
