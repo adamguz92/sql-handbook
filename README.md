@@ -47,11 +47,15 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 # Spis treści 
 
 ## 1. SELECT
-## 2. AS
+## 2. AS (alias)
 ## 3. DISTINCT
 ## 4. CREATE VIEW
 ## 5. LIMIT
-
+## 6. COUNT()
+### 6.1. COUNT(DISTINCT)
+### 6.2. COUNT() multiple columns
+# 7. Kolejność wykonywania poleceń
+# 8. Podręcznik stylu SQL
 ---
 
 # Pliki

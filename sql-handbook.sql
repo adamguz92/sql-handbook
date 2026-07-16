@@ -31,7 +31,7 @@ FROM
 -----------------------------------------------------
 
 -- ==================================================
--- 2. AS
+-- 2. AS (alias)
 -- ==================================================
 
 /* AS w połączeniu z poleceniem SELECT zmieni nazwę wyświetlanej kolumny. 
@@ -93,3 +93,75 @@ LIMIT 10;
 
 -----------------------------------------------------
 
+-- ==================================================
+-- 6. COUNT()
+-- ==================================================
+
+/* COUNT() zwraca ilość niepustych wartości w wyrażeniu podanym jako argument funkcji. */
+
+SELECT COUNT(first_name)
+FROM actor; /* Wynik: 200 */
+
+/* UWAGA!
+Jeżeli chcę zliczyć unikalne wartości,
+to funkcja DISTINCT musi znajdować się w COUNT(). */
+
+-- ==================================================
+-- 6.1. COUNT(DISTINCT)
+-- ==================================================
+
+SELECT COUNT(DISTINCT first_name)
+FROM actor; /* 121 rekordów */
+
+/* Aby uczynić rezultat bardziej czytelnym mogę napisać kod w taki sposób: */
+
+SELECT COUNT(last_name) AS count_actors
+FROM actor; /* Przy tym zapisie otrzymam nagłówek. */
+
+/* 
+Good practice
+
+COUNT(*) jest zwykle używane do zliczania wszystkich wierszy.
+
+COUNT(column_name) stosuj wtedy,
+gdy interesują Cię tylko niepuste wartości.
+*/
+
+-- ==================================================
+-- 6.2. COUNT()  multiple columns
+-- ==================================================
+
+/* Zliczanie wszystkich rekordów wielu zmiennych z tabeli za pomoca COUNT() */
+
+SELECT 
+    COUNT(first_name) AS count_names,
+    COUNT(last_name) AS count_fornames
+FROM actor;
+
+/* Zliczanie rekordów bez duplikatów wielu zmiennych za pomocą COUNT(DISTINCT) */
+SELECT 
+    COUNT(DISTINCT first_name) AS count_names,
+    COUNT(DISTINCT last_name) AS count_fornames
+FROM actor;
+
+-----------------------------------------------------
+
+-- ==================================================
+-- 7. Kolejność wykonywania poleceń
+-- ==================================================
+
+/*
+1. FROM 
+2. SELECT 
+3. LIMIT
+ 
+*/
+-----------------------------------------------------
+
+-- ==================================================
+-- 8. Podręcznik stylu SQL
+-- ==================================================
+
+/* https://www.sqlstyle.guide/pl/ */
+
+-----------------------------------------------------
