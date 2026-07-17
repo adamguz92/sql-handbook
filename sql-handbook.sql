@@ -152,7 +152,8 @@ FROM actor;
 
 /*
 1. FROM 
-2. SELECT 
+2. WHERE
+3. SELECT 
 3. LIMIT
  
 */
@@ -163,5 +164,81 @@ FROM actor;
 -- ==================================================
 
 /* https://www.sqlstyle.guide/pl/ */
+
+-----------------------------------------------------
+
+-- ==================================================
+-- 9. WHERE - filtrowanie z liczbami
+-- ==================================================
+
+/* WHERE zawęża wyniki do wskazanych cech zmiennych. */
+
+/* Podejrzę tabelę film. */
+
+SELECT *
+FROM film;
+
+/* Tabela film ma kolumnę release_year. 
+Wyświetlę filmy dłuższe niż 100 minut. */
+
+SELECT COUNT(*) 
+FROM film; /* Wynik: 1000 */
+
+SELECT title
+FROM film
+WHERE length > 90;
+
+/* Ile jest filmów dłuższych niż 90 minut? */
+
+SELECT COUNT(*) AS films_not_90_minutes
+FROM film
+WHERE length > 90; /* Wynik: 675 */
+
+/* Teraz wybiorę wszystkie filmy z wyjątkiem tych, 
+które trwaja dokładnie 90 minut. */
+
+SELECT title AS shorter_and_longer_90
+FROM film
+WHERE length <> 90;
+
+/* Ile ich jest? */
+
+SELECT COUNT(title) AS count_shorter_and_longer_90
+FROM film
+WHERE length <> 90; /* Wynik: 995 */
+
+-- ==================================================
+-- 9.1. WHERE - filtrowanie z tekstem
+-- ==================================================
+
+/* Wartości tekstowe zapisuje sie zawsze w pojedynczych apostrofach. */
+
+SELECT *
+FROM actor
+WHERE first_name = 'John';
+
+-- ==================================================
+-- 9.2. WHERE - operatory
+-- ==================================================
+
+/*
+> większy
+< mniejszy
+= równy
+>= większy równy
+<= miejszy równy
+<> nie równy
+*/ 
+
+-- ==================================================
+-- 9.3. WHERE i LIMIT
+-- ==================================================
+
+/* LIMIT wystepuje zawsze po WHERE. */
+
+SELECT *
+FROM actor
+WHERE first_name = 'Nick'
+LIMIT 2; /* W całej bazie jest 3 Nicków. */
 
 -----------------------------------------------------
