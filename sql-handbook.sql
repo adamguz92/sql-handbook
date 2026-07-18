@@ -242,3 +242,83 @@ WHERE first_name = 'Nick'
 LIMIT 2; /* W całej bazie jest 3 Nicków. */
 
 -----------------------------------------------------
+
+-- ==================================================
+-- 10. OR, AND, BETWEEN
+-- ==================================================
+
+/* Podgląd danych */
+
+SELECT *
+FROM film
+LIMIT 10;
+
+/* BEETWEEN, OR i AND uwzględniają liczbowe wartości graniczne. */
+
+-- ==================================================
+-- 10.1. OR
+-- ==================================================
+
+SELECT title, length
+FROM film
+WHERE length = 90 OR length = 170;
+
+/* Wyświetli wszystkie tytuł, trwają 90 lub 170 minut.
+Zwróć uwagę na zapis nazwy zmiennej length dwukrotnie w połączeniu z OR.
+Taki zapis jest wymagany przez SQL. */
+
+-- ==================================================
+-- 10.2. AND
+-- ==================================================
+
+/* Wybór filmów trwających minimum 90 minut z 2006 roku */
+
+SELECT title, length, release_year
+FROM film
+WHERE length >= 90 AND release_year = 2006;
+
+/* Ile jest filmów spełniających te kryteria? 
+Przypomnienie użycia COUNT(). */
+
+SELECT COUNT(title)
+FROM film
+WHERE length >= 90 AND release_year = 2006; /* Wynik: 680 */
+
+-- ==================================================
+-- 10.3. BETWEEN
+-- ==================================================
+
+SELECT title, length
+FROM film
+WHERE length BETWEEN 90 AND 100; 
+/* Z wartościami 90 i 100 włącznie. */
+
+-- ==================================================
+-- 10.4. AND, OR
+-- ==================================================
+
+SELECT title, length, release_year
+FROM film
+WHERE (length = 90 OR length = 100) 
+    AND (release_year = 2005 OR release_year = 2006);
+
+/*
+Jeżeli w jednym zapytaniu łączysz operatory
+AND oraz OR, warto używać nawiasów,
+aby jednoznacznie określić kolejność
+wykonywania warunków.
+*/
+
+-- ==================================================
+-- 10.5. BETWEEN, AND, AND
+-- ==================================================
+
+/* Konstrukcja z BETWEEN, AND, AND */
+
+SELECT title, length, release_year
+FROM film
+WHERE length
+BETWEEN 90 AND 120 AND release_year = 2006;
+
+-----------------------------------------------------
+
