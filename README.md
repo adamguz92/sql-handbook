@@ -66,6 +66,12 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ### 10.3. BETWEEN
 ### 10.4. AND, OR
 ### 10.5. BETWEEN, AND, AND
+## 11. LIKE, NOT LIKE, OR, IN, %, _
+### 11.1. Najczęściej używane wzorce % i _
+### 11.2. LIKE z operatorem % i _
+### 11.3. NOT LIKE z operatorem % i _
+### 11.4. OR
+### 11.5. 11.5. IN (OR vs IN)
 ---
 
 # Pliki

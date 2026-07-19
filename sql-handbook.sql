@@ -322,3 +322,104 @@ BETWEEN 90 AND 120 AND release_year = 2006;
 
 -----------------------------------------------------
 
+-- ==================================================
+-- 11. LIKE, NOT LIKE, OR, IN, %, _
+-- ==================================================
+
+/* LIKE, NOT LIKE służą do filtrowania tekstu .
+Operator IN pozwala sprawdzić, czy wartość należy do określonego zbioru (tekst, liczby lub daty). */
+
+/* % zastępuje wiele znaków, np. Ad%,
+_ zastępuje jeden brakujący znak, np. Ada_.*/
+
+-- ==================================================
+-- 11.1. Najczęściej używane wzorce % i _
+-- ==================================================
+
+/*
+
+'A%'   - zaczyna się od A
+
+'%A'   - kończy się na A
+
+'%A%'  - zawiera literę A
+
+'A_A'  - zaczyna się od A,
+         następnie dowolny znak,
+         a potem A
+*/
+
+-- ==================================================
+-- 11.2. LIKE z operatorem % i _
+-- ==================================================
+
+/* Najpierw podejrzę dane. */
+
+SELECT first_name
+FROM actor
+WHERE first_name LIKE 'J%'; /* Wynik: imiona zaczynające się na J. */
+
+SELECT first_name
+FROM actor
+WHERE first_name LIKE 'Juli_'; /* Wynik: Julia */
+
+SELECT first_name
+FROM actor
+WHERE first_name LIKE '__rist%er'; /* Wynik: Christopher */
+
+SELECT first_name
+FROM actor
+WHERE first_name LIKE '%a%'; /* Wynik: imiona, 
+która zawierają a, ale nie w pierwszej i ostatniej literze. */
+
+-- ==================================================
+-- 11.3. NOT LIKE z operatorem % i _
+-- ==================================================
+
+SELECT first_name
+FROM actor
+WHERE first_name NOT LIKE 'Julia'; 
+/* Wynik: wszystkie imiona w kolumnie, bez imienia Julia. */
+
+SELECT first_name
+FROM actor
+WHERE first_name NOT LIKE 'Juli_'; 
+/* Wynik: wszystkie imiona w kolumnie, bez imienia Julia. */
+
+SELECT first_name
+FROM actor
+WHERE first_name NOT LIKE 'J%'; 
+/* Wynik: wszystkie imiona w kolumnie, bez imion zaczynających się na J. */
+
+SELECT first_name
+FROM actor
+WHERE first_name NOT LIKE '%a';
+/* Wynik: wszystkie imiona w kolumnie, bez imion zakończonych na literę a. */
+
+-- ==================================================
+-- 11.4. OR
+-- ==================================================
+
+/* OR pozwala wybrać wiele wyników. */
+
+SELECT title, length
+FROM film
+WHERE length = 90 
+OR length = 100
+OR length = 120
+OR length = 180; 
+/* Wynik: filmy, które trwają 90, 100, 120 i 180 minut. */
+
+-- ==================================================
+-- 11.5. IN (OR vs IN)
+-- ==================================================
+
+/* Operator IN pozwala wybrać kilka wartości. 
+Jest to bardziej czytelny i wygodniejszy sposób zapisu wielu warunków niż użycie kilku operatorów OR. */
+
+SELECT title, length
+FROM film
+WHERE length IN (90, 100, 120, 180);
+/* Wynik: filmy, które trwają 90, 100, 120 i 180 minut. */
+
+-----------------------------------------------------
