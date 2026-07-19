@@ -71,7 +71,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ### 11.2. LIKE z operatorem % i _
 ### 11.3. NOT LIKE z operatorem % i _
 ### 11.4. OR
-### 11.5. 11.5. IN (OR vs IN)
+### 11.5. IN (OR vs IN)
 ---
 
 # Pliki
