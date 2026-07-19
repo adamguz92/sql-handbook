@@ -72,6 +72,10 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ### 11.3. NOT LIKE z operatorem % i _
 ### 11.4. OR
 ### 11.5. IN (OR vs IN)
+## 12. Braki danych
+### 12.1. IS NULL
+### 12.2. IS NOT NULL
+### 12.3. COUNT() vs IS NOT NULL
 ---
 
 # Pliki

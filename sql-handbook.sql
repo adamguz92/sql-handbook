@@ -423,3 +423,57 @@ WHERE length IN (90, 100, 120, 180);
 /* Wynik: filmy, które trwają 90, 100, 120 i 180 minut. */
 
 -----------------------------------------------------
+
+-- ==================================================
+-- 12. Braki danych
+-- ==================================================
+
+/* null = missing value
+
+COUNT(*) - zliczy wszystkie rekordy, z pustymi włącznie
+COUNT(first_name) - zliczy tylko wypełnione (niezerowe rekordy). */
+
+/* Podglądam dane. */
+
+SELECT *
+FROM film;
+
+/* Sprawdzam ile jest wszystkich rekordów. */
+
+SELECT COUNT(*) AS count_records
+FROM film; /* Wynik: 200 */
+
+-- ==================================================
+-- 12.1. IS NULL
+-- ==================================================
+
+/* Sprawdzenie czy kolumna ma braki w danych. */
+
+SELECT title AS no_length
+FROM film
+WHERE length IS NULL; /* Wynik: 0 */
+
+-- ==================================================
+-- 12.2. IS NOT NULL
+-- ==================================================
+
+/* Zliczenie niepustych rekordów. */
+
+SELECT COUNT(title) AS count_length
+FROM film
+WHERE length IS NOT NULL;
+
+-- ==================================================
+-- 12.3. COUNT() vs IS NOT NULL
+-- ==================================================
+
+SELECT COUNT(length) AS count_length
+FROM film;
+
+SELECT COUNT(length) AS count_length
+FROM film
+WHERE length IS NOT NULL;
+
+/* Dwa powyższe query są sobie równe. Zwrócą ten sam wynik. */
+
+-----------------------------------------------------
