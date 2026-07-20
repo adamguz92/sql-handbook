@@ -477,3 +477,72 @@ WHERE length IS NOT NULL;
 /* Dwa powyższe query są sobie równe. Zwrócą ten sam wynik. */
 
 -----------------------------------------------------
+
+-- ==================================================
+-- 13. AVG(), SUM(), MIN(), MAX(), COUNT()
+-- ==================================================
+
+/* To funkcje służące do statystycznego podsumowania danych. */
+
+-- ==================================================
+-- 13.1. AVG()
+-- ==================================================
+
+/* Średnia długość trwania filmu */
+
+SELECT AVG(length) AS avg_length
+FROM film;
+
+-- ==================================================
+-- 13.2. SUM()
+-- ==================================================
+
+/* Całkowita długość filmów wyprodukowanych w 2006 r. */
+
+SELECT SUM(length) AS sum_length_2006
+FROM film
+WHERE release_year = 2006;
+
+-- ==================================================
+-- 13.3. MIN()
+-- ==================================================
+
+/* Najkrótszy film w 2006 r. */
+
+SELECT MIN(length)
+FROM film
+WHERE release_year = 2006;
+
+-- ==================================================
+-- 13.4. MAX()
+-- ==================================================
+
+/* Najdłuższy film z 2006 r. */
+
+SELECT MAX(length)
+FROM film
+WHERE release_year = 2006;
+
+-- ==================================================
+-- 13.5. MIN(), MAX() z wartościami nienumerycznymi 
+-- ==================================================
+
+/* Funkcje AVG() i SUM() są używane tylko z wartościami liczbowymi.
+Funkcji MIN(), MAX() i COUNT() można używać z różnymi typami wartości.
+W przypadku wartości tekstowych kolejności będzie oparta na alfabecie. 
+W przypadku daty będzie to data od najwcześniejszej do najpóźniejszej. */
+
+SELECT MIN(first_name)
+FROM actor;
+
+SELECT MAX(first_name)
+FROM actor;
+
+-- ==================================================
+-- 13.6. COUNT() w podsumowaniu danych
+-- ==================================================
+
+SELECT COUNT(first_name)
+FROM actor; /* Zliczy tylko wypełnione (niezerowe) rekordy. */
+
+-----------------------------------------------------
