@@ -546,3 +546,17 @@ SELECT COUNT(first_name)
 FROM actor; /* Zliczy tylko wypełnione (niezerowe) rekordy. */
 
 -----------------------------------------------------
+
+-- ==================================================
+-- 14. ROUND()
+-- ==================================================
+
+/* Służy do zaokrąglania. */
+
+SELECT ROUND(AVG(length), 2) AS avg_round
+FROM film; /* Zaokrąglenie do 2 miejsc po przecinku. */
+
+SELECT ROUND(AVG(length)) AS avg_round
+FROM film; /* Zaokrąglenie do liczb całkowitych. */
+
+-----------------------------------------------------
