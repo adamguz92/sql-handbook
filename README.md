@@ -36,7 +36,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 - [ ] DataCamp - Functions for Manipulating Data in PostgreSQL
 - [ ] DataCamp - Database Design
 
-## Ksiąki
+## Książki
 
 ## Dokumentacja
 
@@ -84,6 +84,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ### 13.5. MIN(), MAX() z wartościami nienumerycznymi 
 ### 13.6. COUNT() w podsumowaniu danych
 ## 14. ROUND()
+## 15. Arytmetyka
 ---
 
 # Pliki

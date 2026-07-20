@@ -44,6 +44,22 @@ FROM
     actor
 LIMIT 10;
 
+/* Przy użyciu funkcji agregujących (np. MAX()) 
+otrzymam wynik z domyślnym aliasem od nazwy funkcji.
+Przykładowo: */
+
+SELECT MAX(length)
+FROM film;
+
+/* Więc jeżeli w jednym zapytaniu użyje dwókrotnie tej samej funkcji,
+otrzymam nakładające się na siebie domyślne aliasy. 
+Aby to rozwiązać użyj aliasów do każdej funkcji agregującej. */
+
+SELECT
+    MAX(length) AS max_length,
+    MAX(rental_duration) AS max_rental_duration
+FROM film;
+
 -----------------------------------------------------
 
 -- ==================================================
@@ -153,10 +169,19 @@ FROM actor;
 /*
 1. FROM 
 2. WHERE
-3. SELECT 
+3. SELECT (Tutaj są dodawane aliasy)
 3. LIMIT
  
 */
+
+/* Zwróć uwagę, że komenda WHERE jest wykonywane przed SELECT,
+dlatego odwołanie się do aliasu w funkcji WHERE nie jest możliwe.
+Poniższy kod zwróci błąd, ponieważ nie odnajdzie zmiennej o nazwie dlugosc. */
+
+SELECT length AS dlugosc
+FROM film
+WHERE dlugosc >= 90;
+
 -----------------------------------------------------
 
 -- ==================================================
@@ -558,5 +583,39 @@ FROM film; /* Zaokrąglenie do 2 miejsc po przecinku. */
 
 SELECT ROUND(AVG(length)) AS avg_round
 FROM film; /* Zaokrąglenie do liczb całkowitych. */
+
+-----------------------------------------------------
+
+-- ==================================================
+-- 14. Arytmetyka
+-- ==================================================
+
+/* Dodawanie */
+SELECT(4 + 3);
+
+
+/* Odejmowanie */
+SELECT(4 - 3);
+
+/* Mnożenie */
+SELECT(4 * 3);
+
+/* Dzielenie */
+SELECT(4 / 3); /* Wynik: 1 */
+
+/* Powyższy zapis nie jest w SQL precyzyjny. 
+Prawidłowy wynik otrzymam używając tego zapisu: */
+
+SELECT (4.0 / 3.0); /* Wynik: 1.33 */
+
+/* WAŻNE
+Funkcje agregujące tj. np. AVG(), SUM() działają NA KOLUMNACH.
+Arytmetyk w SQL operuje na wierszach. */
+
+/* Ten kod nie ma sensu,
+ale ilustruje działanie arytmetyki rekordach wierszy. */
+
+SELECT title, (length - rental_rate) AS length_minu_rental_rate
+FROM film;
 
 -----------------------------------------------------
