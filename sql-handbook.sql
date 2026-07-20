@@ -170,6 +170,7 @@ FROM actor;
 1. FROM 
 2. WHERE
 3. SELECT (Tutaj są dodawane aliasy)
+4. ORDER BY
 3. LIMIT
  
 */
@@ -587,12 +588,12 @@ FROM film; /* Zaokrąglenie do liczb całkowitych. */
 -----------------------------------------------------
 
 -- ==================================================
--- 14. Arytmetyka
+-- 15. Arytmetyka
 -- ==================================================
 
 /* Dodawanie */
-SELECT(4 + 3);
 
+SELECT(4 + 3);
 
 /* Odejmowanie */
 SELECT(4 - 3);
@@ -619,3 +620,65 @@ SELECT title, (length - rental_rate) AS length_minu_rental_rate
 FROM film;
 
 -----------------------------------------------------
+
+-- ==================================================
+-- 16. ORDER BY - sortowanie rezultatów
+-- ==================================================
+
+/* Sortowanie wynikówpo wskazanej zmiennej tekstowej */
+
+SELECT first_name, last_name
+FROM actor
+ORDER BY first_name;
+
+/* Sortowanie wyników po wskazanej zmiennej liczbowej */
+
+SELECT title, length
+FROM film
+ORDER BY length;
+
+-- ==================================================
+-- 16.1. ORDER BY, ASC, DESC - sortowanie rosnąco i malejąco
+-- ==================================================
+
+/* ORDER BY domyślnie sortuje rosnąco. */ 
+
+/* Sortowanie wyników rosnąco po wybranej zmiennej */
+
+SELECT title, length 
+FROM film
+ORDER BY length ASC;
+
+/* Sortowanie rekordów malejąco po wybranej zmiennej */
+
+SELECT title, length 
+FROM film
+ORDER BY length DESC;
+
+-- ==================================================
+-- 16.2. ORDER BY - sortowanie po wielu zmiennych
+-- ==================================================
+
+/* Rekordy są sortowane najpierw według pierwszej zmiennej podanej w zapytanie (length),
+następnie sortowana jest druga podana w kolejności zmienna (rental_rate). */
+
+SELECT title, length, rental_rate
+FROM film
+ORDER BY length ASC, rental_rate ASC;
+
+-- ==================================================
+-- 16.3. ORDER BY - sortowanie po wielu zmiennych z WHERE
+-- ==================================================
+
+/*
+Najpierw wykonywany jest filtr WHERE,
+dopiero później wyniki są sortowane przez ORDER BY.
+*/
+
+SELECT title, length, rental_rate
+FROM film
+WHERE length >= 90
+ORDER BY length ASC, rental_rate ASC;
+
+-----------------------------------------------------
+

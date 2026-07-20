@@ -85,6 +85,10 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ### 13.6. COUNT() w podsumowaniu danych
 ## 14. ROUND()
 ## 15. Arytmetyka
+## 16. ORDER BY - sortowanie rezultatów
+### 16.1. ORDER BY, ASC, DESC - sortowanie rosnąco i malejąco
+### 16.2. ORDER BY - sortowanie po wielu zmiennych
+### 16.3. ORDER BY - sortowanie po wielu zmiennych z WHERE
 ---
 
 # Pliki
