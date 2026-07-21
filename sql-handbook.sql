@@ -167,12 +167,14 @@ FROM actor;
 -- ==================================================
 
 /*
+
 1. FROM 
 2. WHERE
 3. GROUP BY - działa na danych przefiltrowanych przez WHERE
-4. SELECT (Tutaj są dodawane aliasy)
-5. ORDER BY
-6. LIMIT
+4. HAVING
+5. SELECT (Tutaj są dodawane aliasy)
+6. ORDER BY
+7. LIMIT
  
 */
 
@@ -711,3 +713,28 @@ SELECT rental_rate, rating, COUNT(title) AS title_count
 FROM film
 GROUP BY rental_rate, rating
 ORDER BY rental_rate DESC;
+
+-- ==================================================
+-- 18. HAVING - filtrowanie pogrupowanych danych
+-- ==================================================
+
+/* HAVING filtruje pogrupowane rekordy, 
+w przeciwieństwie do WHERE, które filtruje pojedyncze obserwacje. */
+
+/* 
+WHERE filtruje pojedyncze rekordy przed grupowaniem.
+
+HAVING filtruje całe grupy utworzone przez GROUP BY.
+Poniższy kod zwróci error: */
+
+SELECT rental_rate, rating, COUNT(title) AS title_count
+FROM film
+WHERE COUNT(title) > 10
+GROUP BY rental_rate, rating;
+
+/* Natomiast jeżeli użyje HAVING zamiast WHERE kod zadziała: */
+
+SELECT rental_rate, rating, COUNT(title) AS title_count
+FROM film
+GROUP BY rental_rate, rating
+HAVING COUNT(title) >= 70;

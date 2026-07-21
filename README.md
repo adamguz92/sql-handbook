@@ -91,6 +91,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ### 16.3. ORDER BY - sortowanie po wielu zmiennych z WHERE
 ## 17. GROUP BY - grupowanie danych
 ### 17.1. GROUP BY i ORDER BY - grupowanie wielu zmiennych 
+## 18. HAVING - filtrowanie pogrupowanych danych
 ---
 
 # Pliki
