@@ -169,9 +169,10 @@ FROM actor;
 /*
 1. FROM 
 2. WHERE
-3. SELECT (Tutaj są dodawane aliasy)
-4. ORDER BY
-3. LIMIT
+3. GROUP BY - działa na danych przefiltrowanych przez WHERE
+4. SELECT (Tutaj są dodawane aliasy)
+5. ORDER BY
+6. LIMIT
  
 */
 
@@ -682,3 +683,31 @@ ORDER BY length ASC, rental_rate ASC;
 
 -----------------------------------------------------
 
+-- ==================================================
+-- 17. GROUP BY - grupowanie danych
+-- ==================================================
+
+/* Podgląd danych */
+
+SELECT *
+FROM film
+LIMIT 10;
+
+/* Pogrupuje dane po zmiennej rental_rate 
+i sprawdzę jaka jest liczebność każdej grupy. */
+
+SELECT rental_rate, COUNT(title) AS title_count
+FROM film
+GROUP BY rental_rate;
+
+-- ==================================================
+-- 17.1. GROUP BY i ORDER BY - grupowanie wielu zmiennych 
+-- ==================================================
+
+/* Grupowanie po dwóch zmiennych, 
+ze zliczeniem tytułów w każdej kategorii. */
+
+SELECT rental_rate, rating, COUNT(title) AS title_count
+FROM film
+GROUP BY rental_rate, rating
+ORDER BY rental_rate DESC;

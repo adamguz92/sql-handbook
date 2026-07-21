@@ -89,6 +89,8 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ### 16.1. ORDER BY, ASC, DESC - sortowanie rosnąco i malejąco
 ### 16.2. ORDER BY - sortowanie po wielu zmiennych
 ### 16.3. ORDER BY - sortowanie po wielu zmiennych z WHERE
+## 17. GROUP BY - grupowanie danych
+### 17.1. GROUP BY i ORDER BY - grupowanie wielu zmiennych 
 ---
 
 # Pliki
