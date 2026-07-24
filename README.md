@@ -117,3 +117,5 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 |------|------|
 | sql-handbook.sql | Kod tworzony podczas kursów |
 | dvdrental-er-diagram.png | dvdrental Entity-Relational Diagram |
+| sql-for-data-science.pdf | SQL Basics Cheat Sheet (DataCamp) |
+| aggregate-functions-vs-arithmetic.png | Różnica między funkcjami agregującymi i operacjami arytmetycznymi |
