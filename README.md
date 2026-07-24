@@ -36,6 +36,8 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 
 ## Leaders
 
+![leaders ER Diagram](diagrams/leaders-er-diagram.png)
+
 Źródło: 
 - DataCamp, Joining Data in SQL: https://app.datacamp.com/learn/courses/joining-data-in-sql
   
@@ -109,6 +111,9 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ## 17. GROUP BY - grupowanie danych
 ### 17.1. GROUP BY i ORDER BY - grupowanie wielu zmiennych 
 ## 18. HAVING - filtrowanie pogrupowanych danych
+## 19. INNER JOIN
+### 19.1. Aliasing w INNER JOIN
+### 19.2. INNER JOIN z USING()
 ---
 
 # Pliki
@@ -117,5 +122,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 |------|------|
 | sql-handbook.sql | Kod tworzony podczas kursów |
 | dvdrental-er-diagram.png | dvdrental Entity-Relational Diagram |
-| sql-for-data-science.pdf | SQL Basics Cheat Sheet (DataCamp) |
+| sql-for-data-science.png | SQL Basics Cheat Sheet (DataCamp) |
 | aggregate-functions-vs-arithmetic.png | Różnica między funkcjami agregującymi i operacjami arytmetycznymi |
+| leaders-er-diagram.png | leaders Entity-Relational Diagram - uproszczony |
+| diagram-inner-join-id-field.png | Diagram ilustujące działanie INNER JOIN |

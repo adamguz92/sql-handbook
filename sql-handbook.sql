@@ -740,11 +740,71 @@ GROUP BY rental_rate, rating
 HAVING COUNT(title) >= 70;
 
 -- ==================================================
--- 19. 
+-- 19. INNER JOIN
 -- ==================================================
 
 /* Podgląd danych */
 
 SELECT *
-FROM states
-LIMIT 5;
+FROM presidents;
+
+SELECT *
+FROM prime_ministers;
+
+/* Łączenie dwóch tabel po wspólnej zmiennej country */
+
+SELECT 
+    prime_ministers.country, 
+    prime_ministers.continent, 
+    prime_minister, 
+    president
+FROM presidents
+INNER JOIN prime_ministers
+ON presidents.country = prime_ministers.country;
+
+-- ==================================================
+-- 19.1. Aliasing w INNER JOIN
+-- ==================================================
+
+/* Wygodnie jPst aliasować tabele, alasy skracają nazwy tabel.
+przepiszę ten sam kod co powyżej, ale z aliasami. */
+
+SELECT
+    pm.country,
+    pm.continent,
+    prime_minister,
+    president
+FROM presidents AS p
+INNER JOIN prime_ministers AS pm
+ON p.country = pm.country;
+
+-- ==================================================
+-- 19.2. INNER JOIN z USING()
+-- ==================================================
+
+/* Zamiast wskazywania konkretnych nazw kolumn po ON,
+mozna zastosować USING(). Wskazując w funkcji kolumnę ,
+po której ma zostać wykonane połączenie (czyli wspólna dla obu plików). */
+
+SELECT
+    pm.country,
+    pm.continent,
+    prime_minister,
+    president
+FROM presidents AS p
+INNER JOIN prime_ministers AS pm
+USING(country);
+
+/* Podsumowanie
+
+ON
+- można łączyć kolumny o różnych nazwach
+- jest najbardziej uniwersalne
+
+USING()
+- działa tylko wtedy, gdy kolumny mają identyczną nazwę
+- zapis jest krótszy i bardziej czytelny
+
+*/
+
+-----------------------------------------------------
