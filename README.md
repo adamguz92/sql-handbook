@@ -114,6 +114,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ## 19. INNER JOIN
 ### 19.1. Aliasing w INNER JOIN
 ### 19.2. INNER JOIN z USING()
+## 20. Chaining INNER JOINs (Multiple Joins)
 ---
 
 # Pliki
@@ -125,4 +126,5 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 | sql-for-data-science.png | SQL Basics Cheat Sheet (DataCamp) |
 | aggregate-functions-vs-arithmetic.png | Różnica między funkcjami agregującymi i operacjami arytmetycznymi |
 | leaders-er-diagram.png | leaders Entity-Relational Diagram - uproszczony |
-| diagram-inner-join-id-field.png | Diagram ilustujące działanie INNER JOIN |
+| diagram-inner-join-id-field.png | Diagram ilustujący działanie INNER JOIN |
+| chaining-joins | Wizualizacja multiple joins |

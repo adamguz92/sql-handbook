@@ -808,3 +808,66 @@ USING()
 */
 
 -----------------------------------------------------
+
+-- ==================================================
+-- 20. Chaining INNER JOINs (Multiple Joins)
+-- ==================================================
+
+/* Podglądam dane, które będą przydatne w tym rozdziale. */
+
+SELECT *
+FROM prime_ministers;
+
+SELECT *
+FROM presidents;
+
+SELECT *
+FROM prime_minister_terms;
+
+/* Połaczenie dwóch tabel po zmiennej country */
+
+SELECT
+    pm.country,
+    pm.continent,
+    p.president,
+    pm.prime_minister
+FROM prime_ministers AS pm
+INNER JOIN presidents AS p
+USING(country)
+
+/*
+
+Zapytanie wykonuje dwa kolejne INNER JOIN-y.
+
+1. Pierwszy INNER JOIN łączy tabele
+   prime_ministers oraz presidents
+   po kolumnie country.
+
+2. Drugi INNER JOIN dołącza tabelę
+   prime_minister_terms
+   po kolumnie prime_minister.
+
+W rezultacie otrzymujemy tylko kraje,
+które:
+
+- mają zarówno prezydenta, jak i premiera,
+- oraz premiera znajdującego się
+  w tabeli prime_minister_terms.
+
+*/
+
+SELECT
+    pm.country,
+    pm.continent,
+    p.president,
+    pm.prime_minister,
+    pmt.pm_start
+FROM prime_ministers AS pm
+INNER JOIN presidents AS p
+USING(country)
+INNER JOIN prime_minister_terms AS pmt
+USING(prime_minister);
+
+/* Wizualizacja tego łączenia znajduje sie w pliku resources/chaining-joins. */
+
+-----------------------------------------------------
