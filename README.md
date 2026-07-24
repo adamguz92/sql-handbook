@@ -19,9 +19,26 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 # Środowisko
 - PostgreSQL
 - baza DVD Rental
+- baza leaders 
 - Visual Studio Code
 - SQLTools
 
+---
+
+## Bazy danych 
+
+## DVD Rental
+
+![DVD Rental ER Diagram](diagrams/dvdrental-er-diagram.png)
+
+Źródło: 
+- Neon, PostgreSQL Tutorial: https://neon.com/postgresql/getting-started/sample-database
+
+## Leaders
+
+Źródło: 
+- DataCamp, Joining Data in SQL: https://app.datacamp.com/learn/courses/joining-data-in-sql
+  
 ---
 
 # Źródła
@@ -29,7 +46,7 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 ## Kursy
 
 - [x] DataCamp - Introduction to SQL
-- [ ] DataCamp - Intermediate SQL
+- [x] DataCamp - Intermediate SQL
 - [ ] DataCamp - Joining Data in SQL
 - [ ] DataCamp - Data Manipulation in SQL
 - [ ] DataCamp - PostgreSQL Summary Stats and Window Functions
@@ -99,3 +116,4 @@ Nie są to notatki z jednego kursu, lecz uporządkowany zbiór wiedzy z różnyc
 | Plik | Opis |
 |------|------|
 | sql-handbook.sql | Kod tworzony podczas kursów |
+| dvdrental-er-diagram.png | dvdrental Entity-Relational Diagram |

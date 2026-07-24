@@ -738,3 +738,13 @@ SELECT rental_rate, rating, COUNT(title) AS title_count
 FROM film
 GROUP BY rental_rate, rating
 HAVING COUNT(title) >= 70;
+
+-- ==================================================
+-- 19. 
+-- ==================================================
+
+/* Podgląd danych */
+
+SELECT *
+FROM states
+LIMIT 5;
